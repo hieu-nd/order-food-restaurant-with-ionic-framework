@@ -1,0 +1,13 @@
+<span class='checkout-form-error'></span>
+<span class='checkout-form-description'>Fill out your personal details:</span>
+
+<div class='list checkout-form'>
+  <checkout-name userinfo='userinfo'></checkout-name>
+  <checkout-account userinfo='userinfo' ng-if='!isLoggedIn'></checkout-account>
+  <span class='checkout-form-error'>{{error}}</span>
+  <checkout-address userinfo='userinfo'></checkout-address>
+  <div>
+    <h2 class='checkout-total'>Total: ${{total}}</h2>
+    <br><br>
+  </div>
+</div>

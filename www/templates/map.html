@@ -1,0 +1,25 @@
+<style type="text/css">
+map {
+    width: 100%;
+    height: 100% !important;
+}
+
+.scroll,
+.mapWrap {
+    height: 100%;
+}
+</style>
+<ion-view title="Set your location" cache-view="false" >
+    <ion-content>
+        <div class="mapWrap" data-tap-disabled="true">
+            <map center="{{positions[0].lat}},{{positions[0].lng}}" zoom="15">
+                <marker ng-repeat=" pos in positions" position="{{pos.lat}},{{pos.lng}}"></marker>
+            </map>
+        </div>
+        <input type="hidden" id="latlng" value="{{positions[0].lat}},{{positions[0].lng}}" />
+        <div class="list padding">
+            <p>Your Address :</span>
+                <p>{{currentUser.Cart.address}}</p>
+        </div>
+    </ion-content>
+</ion-view>

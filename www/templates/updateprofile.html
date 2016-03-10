@@ -1,0 +1,52 @@
+<style type="text/css">
+.item-input input {
+    color: #333;
+    background: white;
+}
+
+.list:last-child {
+    margin-bottom: 0px;
+    color: white;
+}
+
+.item-stacked-label {
+    border-color: transparent;
+}
+.input-label{
+    color: #333;
+}
+.item-input input{
+        border: 1px solid #ccc;
+}
+</style>
+<ion-view title="My Account" cache-view="false">
+    <ion-nav-buttons side="right">
+        <button style="    color: white;    border-color: white;    top: -10px;    right: 5px;    width: 100%; background: transparent;" class="button button-block button-outline button-positive" ng-click="updateProfile()">Save</button>
+    </ion-nav-buttons>
+    <ion-content>
+        <div class="card" style="background: white; margin-bottom: 0">
+            <div class="item item-avatar" style="    padding: 0;    margin: 0;    text-align: center;    background-color: transparent;    height: 140px">
+                <img ng-src="{{logochowapp}}" style="max-height: 100px; max-width: 100px;position: relative;    margin-right: 30px;">
+                <h2 style="    float: left;    width: 100%;    text-align: center;    margin-top: 10px;">{{currentUser.lastname}}</h2>
+            </div>
+        </div>
+        <div class="list padding" style="background: transparent;">
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Name</span>
+                <input type="text" ng-model="currentUser.name" placeholder="{{currentUser.name}}" value="{{currentUser.name}}">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Last Name</span>
+                <input type="text" ng-model="currentUser.lastname" placeholder="{{currentUser.lastname}}" value="{{currentUser.lastname}}">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Email</span>
+                <input type="text" ng-model="currentUser.email" placeholder="{{currentUser.email}}" value="{{currentUser.email}}">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Phone</span>
+                <input type="text" ng-model="currentUser.phone" placeholder="{{currentUser.phone}}" value="{{currentUser.phone}}">
+            </label>
+        </div>
+    </ion-content>
+</ion-view>

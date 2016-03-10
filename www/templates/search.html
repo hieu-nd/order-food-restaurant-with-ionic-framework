@@ -1,0 +1,43 @@
+<style type="text/css">
+.list .item img {
+    max-width: 50px;
+    max-height: 50px;
+}
+
+.list .item h2 {
+    font-size: 20px;
+}
+
+.list .item i {
+    font-size: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+</style>
+<ion-view view-title="Restaurant Search" cache-view="false" >
+    <!-- <ion-nav-title class="bar bar-header bar-energized">
+  <img src='img/header.png'>
+  </ion-nav-title> -->
+    <ion-content>
+        <!-- <ion-catalog products='products' currentcatid='currentcatid'>
+    </ion-catalog> -->
+        <div class="list list-inset" style=" border: 1px solid #ccc">
+        <form ng-submit="search()">
+            <label class="item item-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="text" placeholder="Search" ng-model="model.keyword" style="color: black">
+            </label>
+        </form>
+        </div>
+        <div class="list card" ng-repeat="restaurant in lstRestaurant">
+            <a href="#/restaurant/{{restaurant.$id}}">
+                <div class="item item-avatar">
+                    <img ng-src="{{restaurant.image}}">
+                    <h2>{{restaurant.restaurantname}} </h2>
+                </div>
+            </a>
+        </div>
+    </ion-content>
+</ion-view>

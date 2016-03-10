@@ -1,0 +1,38 @@
+<style type="text/css">
+.item-input input {
+    background: transparent;
+    
+}
+
+.list:last-child {
+    margin-bottom: 0px;
+    
+}
+a.item{
+    background: transparent;
+}
+</style>
+<ion-view title="My Account" cache-view="false">
+    <ion-content>
+        <div class="card" style="background: transparent;">
+            <div class="item item-avatar" style="    padding: 0;    margin: 0;    text-align: center;    background-color: transparent;    height: 140px">
+                <img ng-src="{{logochowapp}}" style="max-height: 100px; max-width: 100px;position: relative;    margin-right: 30px;">
+                <h2 style="    float: left;    width: 100%;    text-align: center;    margin-top: 10px">{{currentUser.lastname}}</h2>
+            </div>
+        </div>
+        <div class="list padding">
+            <a class="item item-icon-left item-icon-right" href="#/updateprofile">
+                <i class="icon ion-person"></i> My Account
+                <i class="icon ion-arrow-right-c"></i>
+            </a>
+            <a class="item item-icon-left item-icon-right" href="#">
+                <i class="icon ion-help-circled"></i> Help
+                <i class="icon ion-arrow-right-c"></i>
+            </a>
+            <a class="item item-icon-left item-icon-right" href="#">
+                <i class="icon ion-email"></i> Contact us
+                <i class="icon ion-arrow-right-c"></i>
+            </a>
+        </div>
+    </ion-content>
+</ion-view>

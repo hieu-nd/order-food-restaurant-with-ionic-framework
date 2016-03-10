@@ -1,0 +1,46 @@
+<ion-side-menus enable-menu-with-back-views="false">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-black">
+            <ion-nav-back-button class="button-icon ion-arrow-left-c">
+            </ion-nav-back-button>
+            <ion-nav-buttons side="left">
+                <button class="button icon button-positive ion-navicon" menu-toggle="left"></button>
+            </ion-nav-buttons>
+            <ion-nav-buttons side="right">
+                <button class="button icon button-positive ion-bag" menu-toggle="right"></button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="menuContent"></ion-nav-view>
+    </ion-side-menu-content>
+    <ion-side-menu side="left">
+        <ion-header-bar class="bar-dark">
+            <h1 class="title">Shop Now</h1>
+        </ion-header-bar>
+        <ion-header-bar class="bar-subheader" style="padding: 0 !important;">
+            <div class="item item-input-inset my-menu">
+                <label class="item-input-wrapper">
+                    <i class="icon ion-search placeholder-icon"></i>
+                    <input type="search" placeholder="Search" ng-model="search.query" on-return="doSearch()">
+                </label>
+            </div>
+        </ion-header-bar>
+        <ion-content class="my-menu">
+            <ion-list>
+                <ion-item nav-clear menu-close style="margin-top:11px;" href="#/app/catalog">All Products</ion-item>
+                <ion-item nav-clear menu-close href="#/app/category/{{menucategory.id}}" ng-repeat="menucategory in menucategories">
+                    {{menucategory.Prefix}} {{menucategory.Name}} ({{menucategory.Prods}})
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+    <ion-side-menu side="right">
+        <ion-header-bar class="bar-dark">
+            <h1 class="title">My Shopping Bag</h1>
+        </ion-header-bar>
+        <ion-content class='has-footer has-subfooter'>
+            <ion-cart cartproducts='cartProducts'></ion-cart>
+        </ion-content>
+        <ion-cart-sub-footer menu-close></ion-cart-sub-footer>
+        <ion-cart-footer menu-close></ion-cart-footer>
+    </ion-side-menu>
+</ion-side-menus>

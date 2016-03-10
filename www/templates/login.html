@@ -1,0 +1,31 @@
+<style type="text/css">
+.item, .item-input {
+    background: transparent;
+    border: none;
+  
+}
+.item-input input{
+      color: #333;
+}
+</style>
+<ion-view title="" scroll="false" cache-view="false">
+    <ion-content style="background: #FEAE1B;">
+        <div class="padding text-center" style="padding-top: 10%;padding-bottom: 10%">
+            <img ng-src="{{logochowapp}}">
+        </div>
+        <form style="padding: 5px;" ng-submit="doLogin()">
+            <div class="list">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Email</span>
+                    <input type="email" ng-model="loginData.email">
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Password</span>
+                    <input type="password" ng-model="loginData.password">
+                </label>
+                <button class="abutton button button-block button-outline button-positive">Log in</button>
+                <a style="color: white" class="button button-block button-clear button-calm" href="#/forgot">Forgot your password?</a>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>

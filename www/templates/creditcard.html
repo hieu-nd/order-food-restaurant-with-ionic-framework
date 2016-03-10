@@ -1,0 +1,24 @@
+<style type="text/css">
+.input-label{
+    color: #333;
+   
+}
+</style>
+<ion-view title="My Order" cache-view="false" >
+    <ion-content >
+        <div class="list padding">
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Your Name</span>: <span class="input-label">{{currentUser.Cart.lastname}}</span>
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Your Phone</span>: <span class="input-label">{{currentUser.Cart.phone}}</span>
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Total Amount</span>: <span class="input-label">{{totalmount | currency}}</span>
+            </label>
+            <button ng-click="Confirm()" class="abutton button button-block button-outline button-positive" style=" background: #FEAE1B">
+                Confirm
+            </button>
+        </div>
+    </ion-content>
+</ion-view>

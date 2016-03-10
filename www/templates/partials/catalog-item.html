@@ -1,0 +1,35 @@
+<div ng-if='(products.length!=0)'>
+    <div class='ion-catalog-content'>
+        <div class='list card widecard' ng-repeat='product in products track by $index'>
+            <div class="item item-image">
+                <img ng-src="{{ product.Image1 }}">
+            </div>
+            <div class="item item-divider item-text-wrap">
+                <h2>{{product.Title}}</h2></div>
+            <div class="item item-text-wrap">{{product.Description}}</div>
+            <div class="item item-divider" ng-if='(product.Options && product.Options[0].length!=0)'>
+                <fancy-select product="product" optionnumber=1></fancy-select>
+            </div>
+            <div class="item item-divider" ng-if='(product.Options && product.Options[1].length!=0)'>
+                <fancy-select product="product" optionnumber=2></fancy-select>
+            </div>
+            <div class="item item-divider" ng-if='(product.Options && product.Options[2].length!=0)'>
+                <fancy-select product="product" optionnumber=3></fancy-select>
+            </div>
+            <div class="item item-divider" ng-if='(product.Options && product.Options[3].length!=0)'>
+                <fancy-select product="product" optionnumber=4></fancy-select>
+            </div>
+            <div class="button-bar">
+                <button ng-if='(currentcatid!==product.categoryId)' class="button ion-more icon-left bar-dark" ng-click='goToCategory(product.categoryId)'>{{product.categoryName}}</button>
+                <button class="button button-positive ion-ios-cart-outline icon-left" ng-click='addToCart(product)'>Buy for ${{product.myPrice}}</button>
+            </div>
+            <div class="item item-divider item-text-wrap"></div>
+        </div>
+    </div>
+</div>
+<div ng-if='(products.length==0)'>
+    <div class='ion-catalog-content'>
+        
+        <div class="positive" style="text-align:center">No product yet.</div>
+    </div>
+</div>

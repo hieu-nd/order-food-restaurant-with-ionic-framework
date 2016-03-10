@@ -1,0 +1,24 @@
+<div class='item item-divider'>Shipping Address:</div>
+<label class='item item-input address-line-one'>
+  <input type='text' autocapitalize='words' ng-model='userinfo.addressLineOne' ng-blur='onAddressBlur()' placeholder='Address Line 1 *'>
+  <i class="icon" style='width: 40px; text-align: center;'></i>
+</label>
+<label class='item item-input address-line-two'>
+  <input type='text' autocapitalize='words' ng-model='userinfo.addressLineTwo' placeholder='Address Line 2'>
+</label>
+<label class='item item-input city-input'>
+  <input type='text' autocapitalize='words' ng-model='userinfo.city' ng-blur='onCityBlur()' placeholder='City *'>
+  <i class="icon" style='width: 40px; text-align: center;'></i>
+</label>
+<label class='item item-input state-input'>
+  <input type='text' autocapitalize='words' ng-model='userinfo.state' ng-blur='onStateBlur()' placeholder='State *'>
+  <i class="icon" style='width: 40px; text-align: center;'></i>
+</label>
+<label class='item item-input zip-code-input'>
+  <input type='text' ng-model='userinfo.zipcode' ng-blur='onZipBlur()' placeholder='Zipcode *'>
+  <i class="icon zip-code-input-icon" style='width: 40px; text-align: center;'></i>
+</label>
+<label class='item item-input country-input'>
+  <input type='text' autocapitalize='words' ng-model='userinfo.country' ng-blur='onCountryBlur()' placeholder='Country *'>
+  <i class="icon" style='width: 40px; text-align: center;'></i>
+</label>

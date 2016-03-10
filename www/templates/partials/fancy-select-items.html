@@ -1,0 +1,14 @@
+<ion-view class="fancy-select-items modal">
+  <ion-header-bar class="bar-positive">
+    <button ng-click="hideItems()" class="button button-positive button-icon ion-arrow-left-a"></button>
+    <h1 class="title">{{product.Options[(optionnumber-1)][0].get("Name")}}</h1>
+  </ion-header-bar>
+  <ion-content>
+    <div class="list">
+      <label  ng-repeat="option in product.Options[(optionnumber-1)]" class="item item-text-wrap" ng-click='validateOption(option)'>
+        {{option.get("Value")}}
+        <span class="item-note">+ ${{option.get("deltaPrice")}}</span>
+      </label>
+    </div>
+  </ion-content>
+</ion-view>

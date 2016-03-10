@@ -1,0 +1,25 @@
+<style type="text/css">
+
+</style>
+<ion-view title="Restaurants" cache-view="false">
+    <ion-content>
+        <!-- <h5 class="padding">Opening hour 11am - 7pm</h5> -->
+        <div class="list list-inset" style=" border: 1px solid #ccc">
+            <form ng-submit="search()">
+                <label class="item item-input">
+                    <i class="icon ion-search placeholder-icon"></i>
+                    <input type="search" placeholder="Search" style="color: black" ng-model="model.keyword">
+                </label>
+            </form>
+        </div>
+        <div class="list card padding" ng-repeat="restaurant in lstRestaurant">
+            <a href="#/restaurant/{{restaurant.$id}}">
+                <div class="item item-avatar restaurant">
+                    <img ng-src="{{restaurant.image}}">
+                    <h2>{{restaurant.restaurantname}} </h2>
+                    <i class="icon ion-arrow-right-c"></i>
+                </div>
+            </a>
+        </div>
+    </ion-content>
+</ion-view>

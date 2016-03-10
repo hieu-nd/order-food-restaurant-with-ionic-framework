@@ -1,0 +1,48 @@
+<style type="text/css">
+.list {
+    margin-bottom: 0px;
+}
+</style>
+<ion-view view-title="Checkout" cache-view="false" >
+    <ion-content class="padding ">
+        <h5 class="padding">My Order</h5>
+        <div class="list card padding" ng-show="lstRestaurant.length > 0" ng-repeat="restaurant in lstRestaurant">
+            <div class="item item-avatar">
+                <img ng-src="{{restaurant.image}}">
+                <h2>{{restaurant.restaurantname}}</h2>
+            </div>
+            <div class="item item-image">
+            </div>
+            <div class="list card" ng-repeat="cartdetail in getlistProductByRestaurant(restaurant)">
+                <a class="item item-avatar item-icon-right" href="#">
+                    <img ng-src="{{cartdetail.image}}" style="width: 50px;height: 50px;left: 5px;    top: 10px;">
+                    <h4 style="white-space: normal;">{{cartdetail.productname}}</h4>
+                    <p>{{cartdetail.price | currency}}</p>
+                    <span class="badge badge-assertive" style=" padding: 1px 5px;right: 40px;background: #FEAE1B">{{cartdetail.quantity}}</span>
+                    <i ng-click="addToCart(cartdetail)" class="icon ion-plus-round" style="font-size: 20px;display: block;top: 16px;right:5px;color: #FEAE1B;height: 25px;"></i>
+                    <i ng-click="removeToCart(cartdetail)" class="icon ion-minus-round" style="font-size: 20px;display: block;top: 45px;right:5px;color: green;height: 25px;"></i>
+                </a>
+            </div>
+        </div>
+        <div ng-show="lstCartDetail.length > 0">
+            <diV class="list" style="text-align: right;    padding: 10px;    font-size: 18px;">
+                Total: <span style="color: black">{{totalmount | currency}}</span>
+            </diV>
+            <a href="#/map" style="text-decoration: none;">
+                <button class="abutton button button-block button-balanced" style="background: #FEAE1B">
+                    Checkout
+                </button>
+            </a>
+        </div>
+        <div class="list card" ng-show="lstCartDetail.length == 0">
+            <div class="item item-text-wrap">
+                No item found
+            </div>
+            <a href="#/home"  style="text-decoration: none;">
+                <button class="abutton button button-block button-balanced" style="background: #FEAE1B">
+                    Shopping now
+                </button>
+            </a>
+        </div>
+    </ion-content>
+</ion-view>
